@@ -1,3 +1,4 @@
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Random;
@@ -25,13 +26,13 @@ public  int month;
 public  int year;
 public  int customerId;
 int ch;
-Customer[] CusArray;
+DevCustomer[] CusArray;
 final int TOTAL_Customer_LIMIT = 10;
 int CusCount;
 public Dev_MainMenu() {
    accts = new Dev_Account[TOTAL_ACCTS_LIMIT];
    acCount = 0;
-   CusArray = new Customer[TOTAL_Customer_LIMIT];
+   CusArray = new DevCustomer[TOTAL_Customer_LIMIT];
    CusCount=0;
 }
 
