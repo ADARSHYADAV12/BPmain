@@ -1,3 +1,4 @@
+package Experiment;
 import java.io.*;
 import java.util.*;
 public class Dev_MenuOption extends Dev_MainMenu{
@@ -9,7 +10,7 @@ public class Dev_MenuOption extends Dev_MainMenu{
         System.out.println();
         do {
         System.out.println("Enter Cutomer Name :");
-        name=br.readLine();
+        name=br.readLine(); 
         System.out.println("Choose Gender : ");
         System.out.println("> M for Male");
         System.out.println("> F for Female");
@@ -253,10 +254,10 @@ public class Dev_MenuOption extends Dev_MainMenu{
         }
         return acct;
     }
-   public  Customer getCustomerId(int CusId) {
-       Customer cust = null;
+   public  DevCustomer getCustomerId(int CusId) {
+       DevCustomer cust = null;
        for (int i = 0; i < CusCount; i++) {
-           if (CusArray[i].getCustomerId() == CusId) {
+           if (CusArray[i].getCustomerNo() == CusId) {
                cust = CusArray[i];
                break;
            }
@@ -274,8 +275,8 @@ public class Dev_MenuOption extends Dev_MainMenu{
        Scanner in = new Scanner(System.in);
        System.out.println("Enter Customer ID: ");
        int acNum = in.nextInt();
-       Customer cust = getCustomerId(acNum); 
-       if(acNum!=cust.getCustomerId())
+       DevCustomer cust = getCustomerId(acNum); 
+       if(acNum!=cust.getCustomerNo())
        {
            System.out.println("Wrong Customer ID");
            return;
@@ -475,10 +476,10 @@ public void CustomerAdd() throws IOException {
       // }while(choice=='r'||choice=='R');
       // int cus=CusCount++;
        //System.out.println(CusCount++);
-       CusArray[CusCount++] = new Customer(customerId, name1, gender1, dob1 ,address1,city1,state1,pin1,mobileNo1,email1);
+       CusArray[CusCount++] = new DevCustomer(customerId, name1, gender1, dob1 ,address1,city1,state1,pin1,mobileNo1,email1);
        //count=CusCount;
        //System.out.println(CusArray[0].getCity());
-       Customer cust = getCustomerId(customerId); 
+       DevCustomer cust = getCustomerId(customerId); 
       // cust.ForCustomerID();
        //System.out.println(CusCount);
        System.out.println("\tCustomer Registered Successfully!!!");
@@ -487,11 +488,11 @@ public void CustomerAdd() throws IOException {
        
        for (int i = 0 ;i <CusCount; i++) {
           // System.out.println("Testing");
-            System.out.println("\tCustomer ID :  "+CusArray[i].getCustomerId());
+            System.out.println("\tCustomer ID :  "+CusArray[i].getCustomerNo());
             System.out.println("Customer Name :\t"+CusArray[i].getName());
             System.out.println("Gender        :\t"+CusArray[i].getGender());
-            System.out.println("Birthdate     :\t"+CusArray[i].getDob());
-            System.out.println("Address       :\t"+CusArray[i].getAddress());
+            System.out.println("Birthdate     :\t"+CusArray[i].getDOB());
+            System.out.println("Address       :\t"+CusArray[i].getAdress());
             System.out.println("City          :\t"+CusArray[i].getCity());
             System.out.println("State         :\t"+CusArray[i].getState());
             System.out.println("PIN           :\t"+CusArray[i].getPin());
@@ -523,7 +524,7 @@ public void addedCustomerDetails() {
 }*/
 public void ForCustomerID() {
     for (int i = 0 ;i <CusCount; i++) {
-        System.out.println("\tCustomer ID :  "+CusArray[i].getCustomerId());
+        System.out.println("\tCustomer ID :  "+CusArray[i].getCustomerNo());
     }
     
 }
