@@ -31,7 +31,7 @@ public int year;
 public int customerId;
 int ch;
 public String cDetails;
-ArrayList <Customer> customer =new ArrayList<Customer>();
+//ArrayList <Customer> customer =new ArrayList<Customer>();
 
 BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 public void MainMenu() throws Exception
