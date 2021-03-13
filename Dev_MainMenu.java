@@ -1,7 +1,7 @@
-
 import java.io.*;
-import java.util.ArrayList;
+import java.util.*;
 import java.util.Random;
+import bankingDevelop.BankingApplication;
 public class Dev_MainMenu {
 long acNo;
 String acHolderName;
@@ -10,6 +10,10 @@ double acBal;
 final int TOTAL_ACCTS_LIMIT = 10;
 Dev_Account[] accts;
 int acCount;
+public Dev_MainMenu() {
+   accts = new Dev_Account[TOTAL_ACCTS_LIMIT];
+   acCount = 0;
+}
 public  String name; 
 public  String gender;
 public  String dob;
@@ -20,27 +24,20 @@ public  int pin;
 public  long mobileNo;
 public  String email;
 public  String password;
- char choice;
-public  int date;
-public  int month;
-public  int year;
-public  int customerId;
+static char choice;
+public int date;
+public int month;
+public int year;
+public int customerId;
 int ch;
-DevCustomer[] CusArray;
-final int TOTAL_Customer_LIMIT = 10;
-int CusCount;
-public Dev_MainMenu() {
-   accts = new Dev_Account[TOTAL_ACCTS_LIMIT];
-   acCount = 0;
-   CusArray = new DevCustomer[TOTAL_Customer_LIMIT];
-   CusCount=0;
-}
+public String cDetails;
+ArrayList <Customer> customer =new ArrayList<Customer>();
 
-//ArrayList<Integer> list = getRandomNonRepeatingIntegers1(1, 90000, 99999);
 BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 public void MainMenu() throws Exception
 {
 Dev_MenuOption de=new Dev_MenuOption();
+BankingApplication lo = new BankingApplication();
 String cont;
 int m;
 do
@@ -48,15 +45,20 @@ do
     System.out.println("Press 1 to Add New Customer");
     System.out.println("Press 2 to Edit a Customer");
     System.out.println("Press 3 for Accounts related procedures");
+    System.out.println("Press 4 to see all Customer details");
     System.out.println("Press 0 to log out and go back to login screen ");
     m=Integer.parseInt(br.readLine());
     switch(m)
     {
+    case 0:
+        lo.main(null);
+        break;
     case 1 :
-        de.CustomerAdd();
+        de.addCustomer();
+        de.addedCustomerDetails();
             break;
     case 2:
-        de.editCustomer();
+        de.editCustomers();
             break;
     case 3 :
         do {
@@ -94,24 +96,12 @@ do
             }
         } while (ch != 6);
             break;
+    case 4:
+            de.allCustomer();
+            break;
     default :
          break;
     }
 }while(m!=0);
-}
-
-public static ArrayList<Integer> getRandomNonRepeatingIntegers1(int size, int min, int max) {
-    ArrayList<Integer> numbers = new ArrayList<Integer>();
-    while (numbers.size() < size) {
-        int random = getRandomInt1(min, max);
-        if (!numbers.contains(random)) {
-            numbers.add(random);
-        }
-    }
-    return numbers;
-}
-public static int getRandomInt1(int min, int max) {
-    Random random = new Random();
-    return random.nextInt((max - min) + 1) + min;
 }
 }
