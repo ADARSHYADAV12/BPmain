@@ -1,7 +1,7 @@
 /**
  * Class for types of accounts
  * TESTING FINAL PROJECT
- * Created by Divyansh Kanishk Adarsh Lakshay Priyanshu Rishi Udit
+ * Created by Adarsh Divyansh Kanishk Lakshay Priyanshu Rishi Udit
  */
 package TestBank;
 public class Dev_Account extends  Dev_MenuOption {
