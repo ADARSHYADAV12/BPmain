@@ -1,7 +1,7 @@
 /**
  * Class for usre verification
  * TESTING FINAL PROJECT
- * Created by Divyansh Kanishk Adarsh Lakshay Priyanshu Rishi Udit
+ * Created by Adarsh Divyansh Kanishk Lakshay Priyanshu Rishi Udit
  */
 package TestBank;
 import java.io.*;
