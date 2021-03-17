@@ -71,7 +71,7 @@ public class Dev_MainMenu {
                 break;
             case 3:
                 do {
-                    System.out.println("Main Menu");
+                    System.out.println("Accounts Related Procedures");
                     System.out.println("1. Open New Account");
                     System.out.println("2. Deposit Amount");
                     System.out.println("3. Withdraw Amount");
